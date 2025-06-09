@@ -2,11 +2,11 @@
 import "./App.css";
 import ExpenseTrackerPieChart from "./components/PieChart/ExpenseTrackerPieChart";
 
-import TransactionCard from "./components/TransactionCard/TransactionCard";
 import ExpenseTrendsCard from "./components/ExpenseTrendsCard/ExpenseTrendsCard";
 import ExpenseWallet from "./components/ExpenseWallet/ExpenseWallet";
 import { useEffect, useState } from "react";
 import { enqueueSnackbar } from "notistack";
+import TransactionCard from "./components/TransactionCard/TransactionCard.jsx";
 
 
 
@@ -21,10 +21,10 @@ function App() {
       return storedBalance ? parseFloat(storedBalance) : 5000;
     });
 
-  const handleDelete=(id, amount)=>{
+  const handleDelete=(id, price)=>{
     const updatedExpenses = expenses.filter((expense)=> expense.id!==id);
     setExpenses(updatedExpenses);
-    setWalletBalance((prevBalance)=> prevBalance + Number(amount))
+    setWalletBalance((prevBalance)=> prevBalance + Number(price))
 
 
     enqueueSnackbar("Expense deleted successfully!", {  
@@ -48,7 +48,7 @@ useEffect(() => {
       <div className="wallet-header">
         <ExpenseWallet walletBalance={walletBalance} setWalletBalance={setWalletBalance} expenses={expenses} setExpenses={setExpenses}  />
         <div className="expense-summery">
-          <ExpenseTrackerPieChart />
+          <ExpenseTrackerPieChart expenses={expenses} />
           <div className="chart-legend">
             <span>
               <span
@@ -76,7 +76,7 @@ useEffect(() => {
       </div>
 
       <div className="info-matrix">
-        <TransactionCard handleDelete={handleDelete} expenses={expenses} setExpenses={setExpenses}/>
+        <TransactionCard setWalletBalance={setWalletBalance} handleDelete={handleDelete} expenses={expenses} setExpenses={setExpenses}/>
         <ExpenseTrendsCard />
       </div>
     </div>

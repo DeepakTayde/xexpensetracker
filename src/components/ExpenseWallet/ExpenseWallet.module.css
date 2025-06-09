@@ -58,3 +58,20 @@
   cursor: pointer;
   background: linear-gradient(to right, #ff9595, #ff4747, #ff3838);
 }
+
+@media(max-width:768px){
+.expenseWallet {
+  display: flex;
+flex-direction: column;
+justify-content: center;
+  border-radius: 10px;
+  gap: 30px;
+  padding: 10px;
+
+}
+.expenseWallet .walletCard {
+
+  min-width: 250px;
+  width: 100%;
+}
+}

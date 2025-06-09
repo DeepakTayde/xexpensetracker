@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   PiPenLight,
   PiXCircleLight,
@@ -7,10 +7,29 @@ import { categories } from "../../constants/categories";
 import styles from "./TransactionCard.module.css";
 import AddExpensesModal from "../Modal/AddExpensesModal";
 
-const TransactionCard = ({ handleDelete, expenses , setExpenses}) => {
+const TransactionCard = ({ setWalletBalance, handleDelete, expenses , setExpenses}) => {
     const [isExpenseOpen, setIsExpenseOpen] = useState(false);
+    const [editingExpense, setEditingExpense]=useState(null)
   
-  const handleEditExpense= (e)=>{
+  const handleEditExpense = ( updatedExpense ) => {
+    const updatedExpenses = expenses.map((expense)=>{
+      if(expense.id === updatedExpense.id){
+        return updatedExpense;
+      }
+      return expense;
+    });
+
+    const prevExpense = expenses.find((expense)=> expense.id === updatedExpense.id)
+    const expenseDifference = prevExpense.price - Number(updatedExpense.price)
+
+    setExpenses(updatedExpenses);
+    setEditingExpense(null);
+    setIsExpenseOpen(!isExpenseOpen)
+
+    if(expenseDifference !== 0){
+      setWalletBalance((prev) => prev + expenseDifference)
+    }
+
   }
 
 
@@ -46,10 +65,12 @@ const TransactionCard = ({ handleDelete, expenses , setExpenses}) => {
                     <button type="button" onClick={() =>handleDelete(expense.id, expense.price)} className={styles.transactionDeleteBtn}>
                       <PiXCircleLight className={styles.iconsStyle} title="Delete" />
                     </button>
-                    <button type="button" className={styles.transactionEditBtn} onClick={setIsExpenseOpen(!isExpenseOpen)}>
+                    <button type="button" className={styles.transactionEditBtn} onClick={()=>{
+                      setEditingExpense(expense)
+                      setIsExpenseOpen(!isExpenseOpen)}}>
                       <PiPenLight className={styles.iconsStyle} title="Edit" />
                     </button>
-                    <AddExpensesModal handleExpense={handleEditExpense} isOpen={isExpenseOpen} setIsOpen={setIsExpenseOpen} />
+                    <AddExpensesModal editingExpense={editingExpense} handleExpense={handleEditExpense} isOpen={isExpenseOpen} setIsOpen={setIsExpenseOpen} />
 
                   </div>
                 </div>
