@@ -63,11 +63,13 @@ const ExpenseWallet = ({
         >
           + Add Income
         </button>
-        <AddIncomeModal
-          isOpen={isIncomeOpen}
-          setIsOpen={setIsIncomeOpen}
-          onHandleIncome={handleAddIncome}
-        />
+        {isIncomeOpen && (
+          <AddIncomeModal
+            isOpen={isIncomeOpen}
+            setIsOpen={setIsIncomeOpen}
+            onHandleIncome={handleAddIncome}
+          />
+        )}
       </div>
       <div className={styles.walletCard}>
         <h2>
@@ -80,11 +82,13 @@ const ExpenseWallet = ({
         >
           + Add Expense
         </button>
-        <AddExpensesModal
-          handleExpense={handleAddExpense}
-          isOpen={isExpenseOpen}
-          setIsOpen={setIsExpenseOpen}
-        />
+        {isExpenseOpen && (
+          <AddExpensesModal
+            handleExpense={handleAddExpense}
+            isOpen={isExpenseOpen}
+            setIsOpen={setIsExpenseOpen}
+          />
+        )}
       </div>
     </div>
   );

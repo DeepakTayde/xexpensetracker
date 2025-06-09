@@ -54,10 +54,11 @@ const handleSubmit=(e)=>{
       ariaHideApp={false}
     >
       <div className={styles.modalContent}>
-        <h2>{editingExpense ? "Edit Expense" : "Add Expenses"}</h2>
+        <h2>{editingExpense ? "Edit Expense" : "Add Expense"}</h2>
         <form onSubmit={handleSubmit}>
           <div className={styles.modalInputContainer}>
             <input
+            autoFocus
               type="text"
               placeholder="Title"
               name="title"
@@ -104,7 +105,7 @@ const handleSubmit=(e)=>{
               {editingExpense? "Update Expense":"Add Expense"}
             </button>
             <button
-              type="submit"
+              type="button"
               className={styles.modalCloseBtn}
               onClick={() => setIsOpen(!isOpen)}
             >

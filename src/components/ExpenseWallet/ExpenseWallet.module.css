@@ -57,6 +57,7 @@
   border-radius: 15px;
   cursor: pointer;
   background: linear-gradient(to right, #ff9595, #ff4747, #ff3838);
+
 }
 
 @media(max-width:768px){
