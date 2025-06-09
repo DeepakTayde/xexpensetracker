@@ -1,0 +1,60 @@
+
+.expenseWallet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  gap: 50px;
+}
+
+.expenseWallet .walletCard {
+  background-color: #9b9b9b;
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 30px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.18);
+  min-width: 250px;
+  width: 25vw;
+}
+
+.expenseWallet .walletCard h2 {
+  color: #ffffff;
+  font-size: 30px;
+  margin: 0;
+  font-weight: 400;
+  text-align: center;
+}
+.walletBalance {
+  color: #9dff5b;
+  font-weight: 700;
+}
+.addIncomeBtn {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  background: linear-gradient(to right, #b5dc52, #89e148);
+}
+
+.expenseBalance {
+  color: #f4bb4a;
+  font-weight: 700;
+}
+.addExpenseBtn{
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  background: linear-gradient(to right, #ff9595, #ff4747, #ff3838);
+}

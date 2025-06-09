@@ -1,0 +1,123 @@
+.transactionCard {
+
+  min-width: 280px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.transactionListContainer {
+  background: #ffffff;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 20px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.18);
+  color: #3b3b3b;
+  width: 100%;
+  overflow-x: auto;
+}
+.transactionList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.transactionListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  border-bottom: 1px solid #000000;
+}
+.transactionInfoLeft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+}
+.transactionIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.iconsStyle {
+  width: 30px;
+  height: 30px;
+  color: black;
+}
+
+.transactionDetails {
+  line-height: 50%;
+  text-align: left;
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+.transactionName {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #000000;
+}
+.transactionDate {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #9b9b9b;
+}
+
+.transactionInfoRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.transactionAmount {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f4bb4a;
+}
+
+.transactionActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.transactionEditBtn {
+  width: 50px;
+  height: 50px;
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  background-color: #f4bb4a;
+  box-shadow: 0 4px 4px 0 rgba(0, 4, 4, 0.18);
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transactionDeleteBtn {
+  width: 50px;
+  height: 50px;
+  background-color: #ff3e3e;
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 4px 0 rgba(0, 4, 4, 0.18);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

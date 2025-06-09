@@ -1,0 +1,78 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 85%;
+}
+
+.modalContent {
+  padding: 20px;
+  background: #efefefd9;
+  color: #000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+  width: fit-content;
+  height: fit-content;
+  max-width: 500px;
+  position: relative;
+}
+
+.modalContent > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 0;
+}
+.modalInputContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.modalInput {
+  background: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.18);
+  width: 100%;
+}
+
+.modalInput:focus {
+  outline: none;
+}
+.modalBtnContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.modalAddBtn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.18);
+  color: #ffffff;
+  background: #f4bb4a;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.modalCloseBtn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.18);
+  color: #000000;
+  background: #efefefd9;
+  font-weight: 700;
+  cursor: pointer;
+}

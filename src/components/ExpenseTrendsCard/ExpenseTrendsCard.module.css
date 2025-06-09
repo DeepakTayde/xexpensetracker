@@ -1,0 +1,20 @@
+
+.expenseTrendsContainer {
+  min-width: 280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ExpenseTrendsChartContainer {
+  max-width: 100%;
+  height: 200px;
+  background: #ffffff;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 20px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.18);
+  color: #3b3b3b;
+  overflow-x: auto;
+
+}
