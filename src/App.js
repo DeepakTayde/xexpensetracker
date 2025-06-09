@@ -77,7 +77,7 @@ useEffect(() => {
 
       <div className="info-matrix">
         <TransactionCard setWalletBalance={setWalletBalance} handleDelete={handleDelete} expenses={expenses} setExpenses={setExpenses}/>
-        <ExpenseTrendsCard />
+        <ExpenseTrendsCard expenses={expenses}/>
       </div>
     </div>
   );

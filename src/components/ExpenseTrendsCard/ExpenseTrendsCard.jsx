@@ -1,7 +1,13 @@
 import React from 'react'
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
 import styles from './ExpenseTrendsCard.module.css'
-const ExpenseTrendsCard = () => {
+const ExpenseTrendsCard = ({expenses}) => {
+
+  const trendsData = expenses.map((expense) => ({
+    name: expense.category,
+    value: expense.price,
+  }));
+
   return (
             <div className={styles.expenseTrendsCard}>
           <h2>Top Expenses</h2>
@@ -9,11 +15,7 @@ const ExpenseTrendsCard = () => {
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
                 layout="vertical"
-                data={[
-                  { name: "Entertainment", expense: 1500 },
-                  { name: "Food", expense: 2000 },
-                  { name: "Travel", expense: 1000 },
-                ]}
+                data={trendsData}
                 margin={{ top: 30, right: 20, left: 20, bottom: 30 }}
               >
                 <XAxis type="number" hide />
@@ -25,7 +27,7 @@ const ExpenseTrendsCard = () => {
                   tick={{ fill: "#000", fontSize: 14 }}
                 />
                 <Bar
-                  dataKey="expense"
+                  dataKey="value"
                   fill="#A000FF"
                   barSize={24}
                   radius={[0, 20, 20, 0]}

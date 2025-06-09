@@ -67,7 +67,7 @@ const TransactionCard = ({ setWalletBalance, handleDelete, expenses , setExpense
                     </button>
                     <button type="button" className={styles.transactionEditBtn} onClick={()=>{
                       setEditingExpense(expense)
-                      setIsExpenseOpen(!isExpenseOpen)}}>
+                      setIsExpenseOpen(true)}}>
                       <PiPenLight className={styles.iconsStyle} title="Edit" />
                     </button>
                     <AddExpensesModal editingExpense={editingExpense} handleExpense={handleEditExpense} isOpen={isExpenseOpen} setIsOpen={setIsExpenseOpen} />

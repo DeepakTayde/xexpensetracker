@@ -36,11 +36,11 @@ const handleSubmit=(e)=>{
   };
   handleExpense(expenseData);
   
-  
        setTitle("");
     setPrice("");
     setCategory("");
     setDate("")
+    setIsOpen(false)
 }
 
 
